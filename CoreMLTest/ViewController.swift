@@ -4,7 +4,7 @@ import Vision
 import CoreML
 import AVKit
 
-class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class ViewController: UIViewController {
   
   @IBOutlet var topView: UIView!
   @IBOutlet var objectLabel: UILabel!
@@ -15,6 +15,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
   var timeRemaining = 60
   var currentScore = 0
   var highScore = 0
+  
+  lazy var predictor = ImagePredictionService(predictionCompletionHandler: handleObjectIdentification)
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,6 +48,26 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
   
   func handleCameraSetupFailure() {
     print("\n\n * Error setting up camera capture session")
+  }
+  
+  func handleObjectIdentification(objectName: String) {
+    self.objectLabel.text = objectName
+  }
+  
+}
+
+extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+  
+  func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { fatalError("Pixel buffer is nil") }
+    let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
+    let context = CIContext(options: nil)
+    
+    guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { fatalError("Failed to make CGImage") }
+    guard let videoFrame = UIImage(cgImage: cgImage, scale: 1.0, orientation: .leftMirrored).cgImage else { return }
+    DispatchQueue.main.sync {
+      predictor.predict(image: videoFrame)
+    }
   }
   
 }
