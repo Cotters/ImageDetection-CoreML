@@ -22,12 +22,12 @@
                                 <rect key="frame" x="0.0" y="777" width="414" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Object" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="VUy-Or-ldr">
-                                        <rect key="frame" x="2" y="2" width="410" height="81"/>
+                                        <rect key="frame" x="2" y="2" width="410" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF8-Ue-oQm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Confidence" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF8-Ue-oQm">
                                         <rect key="frame" x="8" y="62.5" width="404" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -38,11 +38,10 @@
                                 <constraints>
                                     <constraint firstItem="YF8-Ue-oQm" firstAttribute="leading" secondItem="rcf-gs-r3n" secondAttribute="leading" constant="8" id="4Da-wr-Etd"/>
                                     <constraint firstAttribute="height" constant="85" id="6hc-uX-Rf1"/>
+                                    <constraint firstItem="YF8-Ue-oQm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VUy-Or-ldr" secondAttribute="bottom" constant="5" id="9mf-Z9-HyH"/>
                                     <constraint firstAttribute="bottom" secondItem="YF8-Ue-oQm" secondAttribute="bottom" constant="2" id="Ahq-cU-CGe"/>
-                                    <constraint firstItem="VUy-Or-ldr" firstAttribute="centerY" secondItem="rcf-gs-r3n" secondAttribute="centerY" id="HhR-ay-jpi"/>
                                     <constraint firstAttribute="trailing" secondItem="VUy-Or-ldr" secondAttribute="trailing" constant="2" id="QIc-ae-h75"/>
                                     <constraint firstAttribute="trailing" secondItem="YF8-Ue-oQm" secondAttribute="trailing" constant="2" id="WMg-DG-Qb5"/>
-                                    <constraint firstAttribute="bottom" secondItem="VUy-Or-ldr" secondAttribute="bottom" constant="2" id="hbS-O1-g6r"/>
                                     <constraint firstItem="VUy-Or-ldr" firstAttribute="centerX" secondItem="rcf-gs-r3n" secondAttribute="centerX" id="iQx-hg-Za6"/>
                                     <constraint firstItem="VUy-Or-ldr" firstAttribute="top" secondItem="rcf-gs-r3n" secondAttribute="top" constant="2" id="r8O-2H-FkK"/>
                                 </constraints>
@@ -57,8 +56,8 @@
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
                     <connections>
+                        <outlet property="confidenceLabel" destination="YF8-Ue-oQm" id="ynN-qJ-mJz"/>
                         <outlet property="objectLabel" destination="VUy-Or-ldr" id="bdi-70-sAb"/>
-                        <outlet property="scoreLabel" destination="YF8-Ue-oQm" id="mVr-sB-2wZ"/>
                         <outlet property="topView" destination="rcf-gs-r3n" id="7P0-JR-28N"/>
                     </connections>
                 </viewController>

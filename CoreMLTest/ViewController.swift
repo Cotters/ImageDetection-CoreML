@@ -8,7 +8,7 @@ class ViewController: UIViewController {
   
   @IBOutlet var topView: UIView!
   @IBOutlet var objectLabel: UILabel!
-  @IBOutlet var scoreLabel: UILabel!
+  @IBOutlet var confidenceLabel: UILabel!
   
   var cameraLayer: CALayer!
   var gameTimer: Timer!
@@ -50,8 +50,9 @@ class ViewController: UIViewController {
     print("\n\n * Error setting up camera capture session")
   }
   
-  func handleObjectIdentification(objectName: String) {
+  func handleObjectIdentification(objectName: String, confidence: VNConfidence) {
     self.objectLabel.text = objectName
+    self.confidenceLabel.text = "Confidence: \(confidence)"
   }
   
 }
