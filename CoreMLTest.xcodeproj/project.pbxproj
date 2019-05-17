@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		CF2503B2228F5DE000F99557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2503B1228F5DE000F99557 /* AppDelegate.swift */; };
-		CF2503B4228F5DE000F99557 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2503B3228F5DE000F99557 /* art.scnassets */; };
 		CF2503B6228F5DE000F99557 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2503B5228F5DE000F99557 /* ViewController.swift */; };
 		CF2503B9228F5DE000F99557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2503B7228F5DE000F99557 /* Main.storyboard */; };
 		CF2503BB228F5DE200F99557 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2503BA228F5DE200F99557 /* Assets.xcassets */; };
 		CF2503BE228F5DE200F99557 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF2503BC228F5DE200F99557 /* LaunchScreen.storyboard */; };
+		CF2503C6228F5EE400F99557 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CF2503C5228F5EE400F99557 /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF2503AE228F5DE000F99557 /* CoreMLTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMLTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2503B1228F5DE000F99557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF2503B3228F5DE000F99557 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		CF2503B5228F5DE000F99557 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF2503B8228F5DE000F99557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF2503BA228F5DE200F99557 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2503BD228F5DE200F99557 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF2503BF228F5DE200F99557 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2503C5228F5EE400F99557 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +56,8 @@
 		CF2503B0228F5DE000F99557 /* CoreMLTest */ = {
 			isa = PBXGroup;
 			children = (
+				CF2503C5228F5EE400F99557 /* Inceptionv3.mlmodel */,
 				CF2503B1228F5DE000F99557 /* AppDelegate.swift */,
-				CF2503B3228F5DE000F99557 /* art.scnassets */,
 				CF2503B5228F5DE000F99557 /* ViewController.swift */,
 				CF2503B7228F5DE000F99557 /* Main.storyboard */,
 				CF2503BA228F5DE200F99557 /* Assets.xcassets */,
@@ -125,7 +125,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2503B4228F5DE000F99557 /* art.scnassets in Resources */,
 				CF2503BE228F5DE200F99557 /* LaunchScreen.storyboard in Resources */,
 				CF2503BB228F5DE200F99557 /* Assets.xcassets in Resources */,
 				CF2503B9228F5DE000F99557 /* Main.storyboard in Resources */,
@@ -140,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF2503B6228F5DE000F99557 /* ViewController.swift in Sources */,
+				CF2503C6228F5EE400F99557 /* Inceptionv3.mlmodel in Sources */,
 				CF2503B2228F5DE000F99557 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
